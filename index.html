@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 11</title>
+    
+</head>
+
+<body>
+    <h3>Por favor seleccione la opcion a evaluar del laboratorio 11</h3>
+    <button style="background-color: #008CBA; color: white;" onclick="opcion1()">Opción 1</button>
+    <button style="background-color: #4CAF50; color: white;" onclick="opcion2()">Opción 2</button>
+    <button style="background-color: #FF9800; color: white;" onclick="opcion3()">Opción 3</button>
+    <button style="background-color: #cc00a0; color: white;" onclick="opcion4()">Opción 4</button>
+
+
+    <script>
+        // Opción 1
+        function opcion1() {
+            let nota = prompt("Ingrese su nota: ");
+            
+            if (nota >= 90 && nota <= 100) {
+                document.write("Aprobado con honores");
+            } else if (nota < 90 && nota >= 70) {
+                document.write("Aprobado!!");
+            } else if (nota < 70 && nota > 0) {
+                document.write("Reprobado");
+            } else {
+                document.write("Valor inválido");
+            }
+        }
+
+        // Opción 2
+        function opcion2() {
+            let numero = prompt("Ingrese un número: ");
+            
+            if (numero % 2 == 0) {
+                document.write(`El número ${numero} es par`);
+            } else {
+                document.write(`El número ${numero} es impar`);
+            }
+        }
+
+        // Opción 3
+        function opcion3() {
+            let monto = prompt("Ingrese el valor total de su compra: ");
+            let descuento;
+            let total;
+            
+            if (monto > 100) {
+                descuento = monto * 0.10;
+                total = monto - descuento;
+                document.write(`Total a pagar: ${total}`);
+            } else {
+                document.write("No aplica descuento");
+            }
+        }
+
+        // Opción 4: Juego de adivinanza
+        let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+        
+        function opcion4() {
+            let adivinanza = prompt("Adivine el número (entre 1 y 10): ");
+            
+            if (adivinanza == numeroAleatorio) {
+                alert("¡Felicidades, adivinaste el número!");
+            } else {
+                alert(`Lo siento, el número era ${numeroAleatorio}`);
+            }
+        }
+    </script>
+</body>
+</html>

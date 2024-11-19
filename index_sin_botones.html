@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 11</title>
+</head>
+
+<body>
+    <button onclick="jugar()">Jugar</button>
+
+    <script>
+       let ejercicio=prompt("elija una opcion lab11"," 1, 2, 3, 4")
+
+        
+        if (ejercicio==1)//opcion 1 del laboratorio
+        {
+            let nota = prompt("Ingrese su nota: ")   
+            
+            if (nota>=90&&nota<=100)
+            {
+                document.write("Aprobado con honores");
+            }else if (nota<90&& nota>=70) 
+                {
+                    document.write("Aprobado!!");
+                }
+                else if(nota<70 && nota>0)
+                    {
+                        document.write("Reprobado");
+                    }
+                    else
+                    {   
+                        document.write("valor invalido");
+                    }
+        }            
+        else if(ejercicio==2)//opcion 2 del laboratorio
+        {
+            let numero = prompt("Ingresa un numero: ");
+
+            
+            if (numero%2 == 0)
+            {
+                document.write("el numero ",numero," es par");
+            }
+            else 
+            {
+                document.write("el numero ",numero," es impar");
+
+            }
+
+        }
+        else if(ejercicio==3)//opcion 3 del laboratorio
+        {
+            let monto=prompt("Ingreso el valor total de su compra: ")
+            let descuento;
+            let total;
+            
+
+            if(monto>100)
+            {
+                descuento=monto*0.10; /*descuento del 10%*/
+                total=monto-descuento;
+                document.write("Total a pagar es: ",total)
+            }
+            else 
+            {
+                document.write("No aplica descuento 🤔")
+            }
+
+        }
+        else if(ejercicio==4)//opcion 4 del laboratorio
+        {
+            
+            // Generar número aleatorio entre 1 y 10
+            let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+            // Función para jugar
+            function jugar() {
+            // Solicitar al usuario que adivine el número
+            let adivinanza = prompt("Adivine el número (entre 1 y 10): ");
+
+            // Verificar si el usuario adivinó correctamente
+            if (adivinanza == numeroAleatorio) 
+            {
+                alert("¡Felicidades, adivinaste el número!");
+            } 
+            else 
+            {
+                alert(`Lo siento, el número era ${numeroAleatorio}`);
+            }
+            }
+
+            // Llamar a la función para iniciar el juego
+            jugar();
+
+        }
+
+    </script>
+</body>
+</html>
